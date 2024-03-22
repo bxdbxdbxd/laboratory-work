@@ -1,4 +1,4 @@
-#include "trapezoid.hpp"
+#include "figure.hpp"
 
 double trapezoid_perimeter(double* array) {
     double sum = 0;
