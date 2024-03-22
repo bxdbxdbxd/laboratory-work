@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 
 using namespace std;
 
@@ -12,6 +13,12 @@ int main() {
         cin >> array_of_length_values[i];
     }
     trapezoid_perimeter = perimeter(array_of_length_values);
+    double sum = 0;
+    for (int i = 0; i < 4; i++) {
+        sum = sum + array_of_length_values[i];
+        cout << array_of_length_values[i] << " " << sum << endl;
+    }
+    cout << trapezoid_perimeter << " " << sum;
 }
 
 
@@ -20,5 +27,5 @@ double perimeter(char* array) {
     for (int i = 0; i < 4; i++) {
         sum += array[i];
     }
-    return sum
+    return sum;
 }
