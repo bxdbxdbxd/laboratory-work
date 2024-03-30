@@ -7,14 +7,15 @@ bool checkIsosceles(double first, double second, double third);
 
 using namespace std;
 int main(){
-    double firstParties=0,secondParties=0,thirdParties=0;
-    cin>>firstParties>>secondParties>>thirdParties;
-    if(firstParties + secondParties > thirdParties && firstParties + thirdParties > secondParties && secondParties + thirdParties > firstParties){
-        double sum=Perimetr(firstParties,secondParties,thirdParties,sum);
+    double firstPar=0,secondPar=0,thirdPar=0;
+    cin>>firstPar>>secondPar>>thirdPar;
+
+    if((firstPar + secondPar > thirdPar && firstPar + thirdPar > secondPar && secondPar + thirdPar > firstPar) && (firstPar>0 && secondPar>0 && thirdPar>0)){
+        double sum=Perimetr(firstPar,secondPar,thirdPar,sum);
         cout<<sum<<endl;
-        double Sqare = squareGeron(firstParties,  secondParties, thirdParties,sum);
+        double Sqare = squareGeron(firstPar,  secondPar, thirdPar,sum);
         cout<<Sqare<<endl;
-        if(checkIsosceles(firstParties,secondParties,thirdParties)){
+        if(checkIsosceles(firstPar,secondPar,thirdPar)){
             cout<<"Triangle is isosceles"<<endl;
         }
         else{
@@ -22,7 +23,7 @@ int main(){
         }
     }
     else{
-        cout<<"UNCORRECT";
+        cout<<"UNCORRECT"<<endl;
     }
     return 0;
 }
