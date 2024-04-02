@@ -1,15 +1,11 @@
-try:
-    array_of_length_values = list(map(float, input("Enter side values ").split()))
-    choice_option = int(input("1. Периметр \n2. Площадь \n3. Длина средней линии \n"))
-    match choice_option:
-        case 1:
-            print(sum(array_of_length_values))
-        case 2:
-            a, b = array_of_length_values[1], array_of_length_values[3]
-            c, d = array_of_length_values[0], array_of_length_values[2]
-            area_of_trapezoid = ((a + b) / 2) * (c**2 - (((b - a)**2 + c**2 - d**2) / (2 * (b - a)))**2) ** (0.5)
-            print(area_of_trapezoid)
-        case 3:
-            print((array_of_length_values[1] + array_of_length_values[3]) / 2)
-except ValueError:
-    print("Incorrect data")
+def trapezoid(array_len):
+    a, b = array_len[1], array_len[3]
+    c, d = array_len[0], array_len[2]
+    area_of_trapezoid = ((a + b) / 2) * (c**2 - (((b - a)**2 + c**2 - d**2) / (2 * (b - a)))**2) ** (0.5)
+    response_array = [sum(array_len), area_of_trapezoid, (a + b) / 2]
+    #print(f"Perimeter: {sum(array_len)}\nSquare: {area_of_trapezoid}\nMidline lenth: {(a + b) / 2}\n")
+    return response_array
+
+array = list(map(int, input().split()))
+output_array = trapezoid(array)
+print(f"Perimeter: {output_array[0]}\nSquare: {round(output_array[1], 5)}\nMidline lenth: {round(output_array[2], 5)}\n")
