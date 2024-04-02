@@ -4,12 +4,7 @@ def rect(array_sides):
     diagonal = (pow(array_sides[0], 2)+ pow(array_sides[1], 2))**0.5
     return perimetr, square, round(diagonal,5)
 
-sas = []
-a = int(input())
-b = int(input())
-sas.append(a)
-sas.append(b)
-xo = rect(sas)
-print(xo)
+
+
 
 
